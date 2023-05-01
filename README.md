@@ -11,5 +11,5 @@ Python 3.11.3
 > python3 -m venv venv
 > source venv/bin/activate
 > pip install -r requirements.txt
-> gunicorn -
+> gunicorn album.asgi:application --worker-class uvicorn.workers.UvicornWorker -b localhost:8888
 ```
