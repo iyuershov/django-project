@@ -1,16 +1,16 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework.serializers import ModelSerializer, PrimaryKeyRelatedField
 from album_api.models import Album, Photo
 
 
 class AlbumSerializer(ModelSerializer):
     class Meta:
         model = Album
-        fields = '__all__'
+        fields = ('id', 'name', 'description', 'category',)
 
 
 class PhotoSerializer(ModelSerializer):
-    albums = AlbumSerializer(read_only=True, many=True, source='albums')
+    albums = PrimaryKeyRelatedField(many=True, queryset=Album.objects.all(), required=False)
 
     class Meta:
         model = Photo
-        fields = '__all__'
+        fields = ('id', 'name', 'description', 'albums',)
