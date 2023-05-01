@@ -1,0 +1,38 @@
+[
+  {
+    "model": "album_api.Album",
+    "pk": 1,
+    "fields": {
+      "name": "test album",
+      "description": "test description",
+      "category": 1
+    }
+  },
+  {
+    "model": "album_api.Album",
+    "pk": 2,
+    "fields": {
+      "name": "test album (2)",
+      "description": "test description (2)",
+      "category": 2
+    }
+  },
+  {
+    "model": "album_api.Photo",
+    "pk": 1,
+    "fields": {
+      "name": "test photo",
+      "description": "test photo description",
+      "albums": []
+    }
+  },
+  {
+    "model": "album_api.Photo",
+    "pk": 2,
+    "fields": {
+      "name": "test photo (2)",
+      "description": "test photo description (2)",
+      "albums": [1, 2]
+    }
+  }
+]
