@@ -3,10 +3,10 @@ from django.db import models
 
 class Album(models.Model):
     CATEGORIES = (
-        (1, 'private'),
-        (2, 'public')
+        (1, 'cats'),
+        (2, 'dogs')
     )
-    id: int = models.IntegerField(primary_key=True)
+    id: int = models.AutoField(primary_key=True)
     name: str = models.CharField(max_length=255)
     description: str = models.CharField(max_length=1000, null=True)
     category: int = models.IntegerField(choices=CATEGORIES, default=1)
@@ -16,7 +16,7 @@ class Album(models.Model):
 
 
 class Photo(models.Model):
-    id: int = models.IntegerField(primary_key=True)
+    id: int = models.AutoField(primary_key=True)
     name: str = models.CharField(max_length=255)
     description: str = models.CharField(max_length=1000, null=True)
     albums = models.ManyToManyField(Album)

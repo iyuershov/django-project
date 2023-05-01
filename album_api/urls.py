@@ -9,5 +9,5 @@ album_api_router.register(r'photos', views.PhotoViewSet, basename='photo')
 
 urlpatterns = [
     path('', include(album_api_router.urls)),
-    path('hello', views.hello_world_view, basename='hello_world'),
+    path('hello', views.hello_world_view, name='hello_world'),
 ]
