@@ -14,3 +14,12 @@
 > docker run --rm -it -d -p 8888:8888 ershov-django-project
 ```
 Проверяем, что все отработало корректно http://localhost:8888/admin
+
+Если пароль не был изменен, то стандартные параметры входа в админку следующие:
+```
+User: admin
+Pass: Place-Supersecret-Passw0rd-Here
+```
+
+Проверяем, что в сущностях Albums и Photos 
+создано по 2 объекта объявленных в `albums_api/fixtures/initial_data.json`.
