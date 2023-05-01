@@ -9,6 +9,8 @@ class AlbumSerializer(ModelSerializer):
 
 
 class PhotoSerializer(ModelSerializer):
+    albums = AlbumSerializer(read_only=True, many=True, source='albums')
+
     class Meta:
         model = Photo
         fields = '__all__'
